@@ -1,0 +1,14 @@
+{
+  "name": "akinator-clone",
+  "version": "1.0.0",
+  "description": "Clon de Akinator: adivina personajes mediante preguntas de sí/no usando un motor de probabilidades.",
+  "type": "module",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akinator Clone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+
+  <main class="app">
+    <header class="app-header">
+      <h1>🧞 Akinator Clone</h1>
+      <p class="subtitle">Piensa en un personaje real o ficticio... ¡Yo lo adivinaré!</p>
+    </header>
+
+    <section id="screen-intro" class="screen active">
+      <div class="genie">🧞‍♂️</div>
+      <p class="intro-text">
+        Piensa en cualquier persona real, animal o personaje de ficción.
+        Te haré preguntas de sí/no hasta descubrir quién es.
+      </p>
+      <button id="btn-start" class="btn btn-primary">Empezar a jugar</button>
+      <p id="character-count" class="character-count"></p>
+    </section>
+
+    <section id="screen-question" class="screen">
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <p id="question-number" class="question-number"></p>
+      <div class="genie genie-small">🧞‍♂️</div>
+      <h2 id="question-text" class="question-text">¿...?</h2>
+      <div class="answers">
+        <button class="btn btn-answer" data-answer="yes">Sí</button>
+        <button class="btn btn-answer" data-answer="probably">Probablemente</button>
+        <button class="btn btn-answer" data-answer="dont_know">No lo sé</button>
+        <button class="btn btn-answer" data-answer="probably_not">Probablemente no</button>
+        <button class="btn btn-answer" data-answer="no">No</button>
+      </div>
+    </section>
+
+    <section id="screen-guess" class="screen">
+      <div class="genie">🤔</div>
+      <p class="guess-intro">¡Creo que ya sé quién es...!</p>
+      <div class="guess-card">
+        <div id="guess-emoji" class="guess-emoji">❓</div>
+        <h2 id="guess-name" class="guess-name">---</h2>
+        <p id="guess-category" class="guess-category"></p>
+      </div>
+      <p class="guess-question">¿Es correcto?</p>
+      <div class="answers">
+        <button id="btn-guess-yes" class="btn btn-primary">Sí, ¡correcto!</button>
+        <button id="btn-guess-no" class="btn btn-secondary">No, sigue intentando</button>
+      </div>
+    </section>
+
+    <section id="screen-win" class="screen">
+      <div class="genie">🎉</div>
+      <h2 id="win-message" class="result-message"></h2>
+      <button id="btn-restart-win" class="btn btn-primary">Jugar otra vez</button>
+    </section>
+
+    <section id="screen-teach" class="screen">
+      <div class="genie">😅</div>
+      <h2 id="teach-message" class="result-message"></h2>
+      <form id="teach-form" class="teach-form">
+        <label for="teach-name">¿En quién pensabas?</label>
+        <input id="teach-name" type="text" placeholder="Nombre del personaje" required maxlength="60" />
+
+        <label for="teach-emoji">Emoji que lo represente (opcional)</label>
+        <input id="teach-emoji" type="text" placeholder="🦸" maxlength="8" />
+
+        <label for="teach-category">Categoría (opcional)</label>
+        <input id="teach-category" type="text" placeholder="Ej. Música, Historia, Anime..." maxlength="40" />
+
+        <button type="submit" class="btn btn-primary">Enseñarme</button>
+        <button type="button" id="btn-skip-teach" class="btn btn-secondary">No quiero enseñar</button>
+      </form>
+    </section>
+
+    <section id="screen-learned" class="screen">
+      <div class="genie">🧠</div>
+      <h2 id="learned-message" class="result-message"></h2>
+      <button id="btn-restart-learned" class="btn btn-primary">Jugar otra vez</button>
+    </section>
+
+    <p id="error-banner" class="error-banner" hidden></p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
