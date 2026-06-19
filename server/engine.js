@@ -58,7 +58,7 @@ function createSession() {
 
 function getSession(id) {
   const session = sessions.get(id);
-  if (!session) throw new Error('Sesión no encontrada');
+  if (!session) throw new Error('Sessione non trovata');
   return session;
 }
 
@@ -78,7 +78,7 @@ function normalizeWeights(session) {
 
 function applyAnswer(session, questionId, answer) {
   const userVal = ANSWER_VALUES[answer];
-  if (userVal === undefined) throw new Error('Respuesta inválida');
+  if (userVal === undefined) throw new Error('Risposta non valida');
 
   session.askedQuestionIds.add(questionId);
   session.questionCount += 1;
@@ -200,7 +200,7 @@ function buildOutOfGuessesStep(session) {
   return {
     type: 'teach',
     sessionId: session.id,
-    message: 'Me has ganado... ¡no he podido adivinarlo! ¿Quién era?',
+    message: 'Hai vinto tu... non sono riuscito a indovinarlo! Chi era?',
   };
 }
 
@@ -227,10 +227,10 @@ function startSession() {
 
 function answer(sessionId, answerKey) {
   const session = getSession(sessionId);
-  if (session.finished) throw new Error('La sesión ya ha terminado');
-  if (session.pendingGuessId) throw new Error('Hay una adivinanza pendiente de confirmar');
-  if (!(answerKey in ANSWER_VALUES)) throw new Error('Respuesta inválida');
-  if (!session._lastAskedId) throw new Error('No hay pregunta activa');
+  if (session.finished) throw new Error('La sessione è già terminata');
+  if (session.pendingGuessId) throw new Error("C'è un tentativo in attesa di conferma");
+  if (!(answerKey in ANSWER_VALUES)) throw new Error('Risposta non valida');
+  if (!session._lastAskedId) throw new Error('Nessuna domanda attiva');
 
   applyAnswer(session, session._lastAskedId, answerKey);
   return nextStep(session);
@@ -238,7 +238,7 @@ function answer(sessionId, answerKey) {
 
 function guessFeedback(sessionId, correct) {
   const session = getSession(sessionId);
-  if (!session.pendingGuessId) throw new Error('No hay ninguna adivinanza pendiente');
+  if (!session.pendingGuessId) throw new Error('Nessun tentativo in attesa');
 
   const guessedId = session.pendingGuessId;
   session.pendingGuessId = null;
@@ -249,7 +249,7 @@ function guessFeedback(sessionId, correct) {
     return {
       type: 'win',
       sessionId: session.id,
-      message: `¡Sabía que era ${character.name}! ${character.emoji}`,
+      message: `Lo sapevo, era ${character.name}! ${character.emoji}`,
     };
   }
 
@@ -265,7 +265,7 @@ function guessFeedback(sessionId, correct) {
 function teach(sessionId, payload) {
   const session = getSession(sessionId);
   const { name, emoji, category } = payload;
-  if (!name || !name.trim()) throw new Error('El nombre es obligatorio');
+  if (!name || !name.trim()) throw new Error('Il nome è obbligatorio');
 
   const newCharacter = {
     id:
@@ -279,7 +279,7 @@ function teach(sessionId, payload) {
       Date.now().toString(36),
     name: name.trim(),
     emoji: emoji && emoji.trim() ? emoji.trim() : '❓',
-    category: category && category.trim() ? category.trim() : 'Otros',
+    category: category && category.trim() ? category.trim() : 'Altro',
     a: {},
   };
 
@@ -295,7 +295,7 @@ function teach(sessionId, payload) {
   return {
     type: 'learned',
     sessionId: session.id,
-    message: `¡Gracias! He aprendido quién es ${newCharacter.name}. La próxima vez lo adivinaré.`,
+    message: `Grazie! Ho imparato chi è ${newCharacter.name}. La prossima volta lo indovinerò.`,
   };
 }
 

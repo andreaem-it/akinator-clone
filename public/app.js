@@ -33,7 +33,7 @@ async function api(path, body) {
     body: JSON.stringify(body || {}),
   });
   const data = await res.json();
-  if (!res.ok) throw new Error(data.error || 'Algo salió mal');
+  if (!res.ok) throw new Error(data.error || 'Qualcosa è andato storto');
   return data;
 }
 
@@ -42,7 +42,7 @@ function renderStep(step) {
 
   if (step.type === 'question') {
     document.getElementById('question-text').textContent = step.question.text;
-    document.getElementById('question-number').textContent = `Pregunta ${step.questionNumber}`;
+    document.getElementById('question-number').textContent = `Domanda ${step.questionNumber}`;
     document.getElementById('progress-fill').style.width = `${step.progress}%`;
     showScreen('question');
   } else if (step.type === 'guess') {
@@ -94,7 +94,7 @@ async function loadCharacterCount() {
   try {
     const res = await fetch('/api/info');
     const data = await res.json();
-    document.getElementById('character-count').textContent = `Conozco ${data.characterCount} personajes... ¡y aprendo más cada partida!`;
+    document.getElementById('character-count').textContent = `Conosco ${data.characterCount} personaggi... e ne imparo altri ad ogni partita!`;
   } catch {
     /* not critical if it fails */
   }

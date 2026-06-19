@@ -3,7 +3,7 @@
     "id": "cristiano_ronaldo",
     "name": "Cristiano Ronaldo",
     "emoji": "⚽",
-    "category": "Deporte",
+    "category": "Sport",
     "a": {
       "real": 1,
       "human": 1,
@@ -40,7 +40,7 @@
     "id": "lionel_messi",
     "name": "Lionel Messi",
     "emoji": "⚽",
-    "category": "Deporte",
+    "category": "Sport",
     "a": {
       "real": 1,
       "human": 1,
@@ -77,7 +77,7 @@
     "id": "albert_einstein",
     "name": "Albert Einstein",
     "emoji": "🧠",
-    "category": "Ciencia",
+    "category": "Scienza",
     "a": {
       "real": 1,
       "human": 1,
@@ -151,7 +151,7 @@
     "id": "michael_jackson",
     "name": "Michael Jackson",
     "emoji": "🕺",
-    "category": "Música",
+    "category": "Musica",
     "a": {
       "real": 1,
       "human": 1,
@@ -188,7 +188,7 @@
     "id": "marilyn_monroe",
     "name": "Marilyn Monroe",
     "emoji": "🎬",
-    "category": "Cine",
+    "category": "Cinema",
     "a": {
       "real": 1,
       "human": 1,
@@ -225,7 +225,7 @@
     "id": "barack_obama",
     "name": "Barack Obama",
     "emoji": "🇺🇸",
-    "category": "Política",
+    "category": "Politica",
     "a": {
       "real": 1,
       "human": 1,
@@ -262,7 +262,7 @@
     "id": "elon_musk",
     "name": "Elon Musk",
     "emoji": "🚀",
-    "category": "Tecnología",
+    "category": "Tecnologia",
     "a": {
       "real": 1,
       "human": 1,
@@ -299,7 +299,7 @@
     "id": "william_shakespeare",
     "name": "William Shakespeare",
     "emoji": "🎭",
-    "category": "Literatura",
+    "category": "Letteratura",
     "a": {
       "real": 1,
       "human": 1,
@@ -336,7 +336,7 @@
     "id": "cleopatra",
     "name": "Cleopatra",
     "emoji": "👑",
-    "category": "Historia",
+    "category": "Storia",
     "a": {
       "real": 1,
       "human": 1,
@@ -371,9 +371,9 @@
   },
   {
     "id": "napoleon_bonaparte",
-    "name": "Napoleón Bonaparte",
+    "name": "Napoleone Bonaparte",
     "emoji": "🎩",
-    "category": "Historia",
+    "category": "Storia",
     "a": {
       "real": 1,
       "human": 1,
@@ -410,7 +410,7 @@
     "id": "steve_jobs",
     "name": "Steve Jobs",
     "emoji": "📱",
-    "category": "Tecnología",
+    "category": "Tecnologia",
     "a": {
       "real": 1,
       "human": 1,
@@ -447,7 +447,7 @@
     "id": "beyonce",
     "name": "Beyoncé",
     "emoji": "🎤",
-    "category": "Música",
+    "category": "Musica",
     "a": {
       "real": 1,
       "human": 1,
@@ -482,9 +482,9 @@
   },
   {
     "id": "mickey_mouse",
-    "name": "Mickey Mouse",
+    "name": "Topolino",
     "emoji": "🐭",
-    "category": "Animación",
+    "category": "Animazione",
     "a": {
       "real": -1,
       "human": -0.5,
@@ -519,9 +519,9 @@
   },
   {
     "id": "donald_duck",
-    "name": "Donald Duck",
+    "name": "Paperino",
     "emoji": "🦆",
-    "category": "Animación",
+    "category": "Animazione",
     "a": {
       "real": -1,
       "human": -1,
@@ -558,7 +558,7 @@
     "id": "elsa_frozen",
     "name": "Elsa (Frozen)",
     "emoji": "❄️",
-    "category": "Animación",
+    "category": "Animazione",
     "a": {
       "real": -1,
       "human": 1,
@@ -595,7 +595,7 @@
     "id": "woody_toy_story",
     "name": "Woody (Toy Story)",
     "emoji": "🤠",
-    "category": "Animación",
+    "category": "Animazione",
     "a": {
       "real": -1,
       "human": -0.5,
@@ -630,9 +630,9 @@
   },
   {
     "id": "bob_esponja",
-    "name": "Bob Esponja",
+    "name": "SpongeBob",
     "emoji": "🧽",
-    "category": "Animación",
+    "category": "Animazione",
     "a": {
       "real": -1,
       "human": -1,
@@ -667,9 +667,9 @@
   },
   {
     "id": "homero_simpson",
-    "name": "Homero Simpson",
+    "name": "Homer Simpson",
     "emoji": "🍩",
-    "category": "Animación",
+    "category": "Animazione",
     "a": {
       "real": -1,
       "human": 1,
@@ -706,7 +706,7 @@
     "id": "bugs_bunny",
     "name": "Bugs Bunny",
     "emoji": "🐰",
-    "category": "Animación",
+    "category": "Animazione",
     "a": {
       "real": -1,
       "human": -1,
@@ -741,9 +741,9 @@
   },
   {
     "id": "tom",
-    "name": "Tom (Tom y Jerry)",
+    "name": "Tom (Tom e Jerry)",
     "emoji": "🐱",
-    "category": "Animación",
+    "category": "Animazione",
     "a": {
       "real": -1,
       "human": -1,
@@ -778,9 +778,9 @@
   },
   {
     "id": "jerry",
-    "name": "Jerry (Tom y Jerry)",
+    "name": "Jerry (Tom e Jerry)",
     "emoji": "🐭",
-    "category": "Animación",
+    "category": "Animazione",
     "a": {
       "real": -1,
       "human": -1,
@@ -817,7 +817,7 @@
     "id": "scooby_doo",
     "name": "Scooby-Doo",
     "emoji": "🐶",
-    "category": "Animación",
+    "category": "Animazione",
     "a": {
       "real": -1,
       "human": -1,
@@ -854,7 +854,7 @@
     "id": "winnie_the_pooh",
     "name": "Winnie the Pooh",
     "emoji": "🍯",
-    "category": "Animación",
+    "category": "Animazione",
     "a": {
       "real": -1,
       "human": -1,
@@ -891,7 +891,7 @@
     "id": "shrek",
     "name": "Shrek",
     "emoji": "🟢",
-    "category": "Animación",
+    "category": "Animazione",
     "a": {
       "real": -1,
       "human": -1,
@@ -928,7 +928,7 @@
     "id": "superman",
     "name": "Superman",
     "emoji": "🦸‍♂️",
-    "category": "Superhéroes",
+    "category": "Supereroi",
     "a": {
       "real": -1,
       "human": -0.5,
@@ -965,7 +965,7 @@
     "id": "batman",
     "name": "Batman",
     "emoji": "🦇",
-    "category": "Superhéroes",
+    "category": "Supereroi",
     "a": {
       "real": -1,
       "human": 1,
@@ -1002,7 +1002,7 @@
     "id": "spiderman",
     "name": "Spider-Man",
     "emoji": "🕷️",
-    "category": "Superhéroes",
+    "category": "Supereroi",
     "a": {
       "real": -1,
       "human": 1,
@@ -1039,7 +1039,7 @@
     "id": "wonder_woman",
     "name": "Wonder Woman",
     "emoji": "🦸‍♀️",
-    "category": "Superhéroes",
+    "category": "Supereroi",
     "a": {
       "real": -1,
       "human": -0.5,
@@ -1076,7 +1076,7 @@
     "id": "iron_man",
     "name": "Iron Man",
     "emoji": "🤖",
-    "category": "Superhéroes",
+    "category": "Supereroi",
     "a": {
       "real": -1,
       "human": 1,
@@ -1113,7 +1113,7 @@
     "id": "darth_vader",
     "name": "Darth Vader",
     "emoji": "🖤",
-    "category": "Cine / Sci-Fi",
+    "category": "Cinema / Sci-Fi",
     "a": {
       "real": -1,
       "human": 0.5,
@@ -1150,7 +1150,7 @@
     "id": "yoda",
     "name": "Yoda",
     "emoji": "👽",
-    "category": "Cine / Sci-Fi",
+    "category": "Cinema / Sci-Fi",
     "a": {
       "real": -1,
       "human": -1,
@@ -1187,7 +1187,7 @@
     "id": "mario",
     "name": "Mario",
     "emoji": "🍄",
-    "category": "Videojuegos",
+    "category": "Videogiochi",
     "a": {
       "real": -1,
       "human": 1,
@@ -1224,7 +1224,7 @@
     "id": "pikachu",
     "name": "Pikachu",
     "emoji": "⚡",
-    "category": "Videojuegos / Anime",
+    "category": "Videogiochi / Anime",
     "a": {
       "real": -1,
       "human": -1,
@@ -1261,7 +1261,7 @@
     "id": "sonic",
     "name": "Sonic",
     "emoji": "🦔",
-    "category": "Videojuegos",
+    "category": "Videogiochi",
     "a": {
       "real": -1,
       "human": -1,
@@ -1372,7 +1372,7 @@
     "id": "sherlock_holmes",
     "name": "Sherlock Holmes",
     "emoji": "🔍",
-    "category": "Literatura",
+    "category": "Letteratura",
     "a": {
       "real": -1,
       "human": 1,
@@ -1409,7 +1409,7 @@
     "id": "harry_potter",
     "name": "Harry Potter",
     "emoji": "⚡",
-    "category": "Literatura / Fantasía",
+    "category": "Letteratura / Fantasy",
     "a": {
       "real": -1,
       "human": 1,
@@ -1446,7 +1446,7 @@
     "id": "hermione_granger",
     "name": "Hermione Granger",
     "emoji": "📚",
-    "category": "Literatura / Fantasía",
+    "category": "Letteratura / Fantasy",
     "a": {
       "real": -1,
       "human": 1,

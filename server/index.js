@@ -54,5 +54,5 @@ app.post(
 );
 
 app.listen(PORT, () => {
-  console.log(`Akinator Clone escuchando en http://localhost:${PORT}`);
+  console.log(`Akinator Clone in ascolto su http://localhost:${PORT}`);
 });
