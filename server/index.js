@@ -53,6 +53,10 @@ app.post(
   )
 );
 
-app.listen(PORT, () => {
-  console.log(`Akinator Clone in ascolto su http://localhost:${PORT}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Akinator Clone in ascolto su http://localhost:${PORT}`);
+  });
+}
+
+export default app;
