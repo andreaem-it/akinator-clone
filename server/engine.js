@@ -32,7 +32,13 @@ let characters = JSON.parse(fs.readFileSync(CHARACTERS_PATH, 'utf-8'));
 const sessions = new Map();
 
 function persistCharacters() {
-  fs.writeFileSync(CHARACTERS_PATH, JSON.stringify(characters, null, 2) + '\n');
+  try {
+    fs.writeFileSync(CHARACTERS_PATH, JSON.stringify(characters, null, 2) + '\n');
+  } catch (err) {
+    // Filesystem is read-only on serverless platforms (e.g. Vercel). The new
+    // character still lives in memory for the rest of this instance's life.
+    console.warn('Impossibile salvare characters.json:', err.message);
+  }
 }
 
 function createSession() {
