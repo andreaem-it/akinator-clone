@@ -3,6 +3,7 @@ import { profile } from "../data/profile";
 import { GradientField } from "./GradientField";
 import { Terminal } from "./Terminal";
 import { Magnetic } from "./Magnetic";
+import { scrollToId } from "../lib/scroll";
 
 const line = {
   hidden: {},
@@ -70,13 +71,17 @@ export function Hero() {
             transition={{ delay: 0.85, duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
             className="mt-10 flex flex-wrap items-center gap-4"
           >
-            <Magnetic as="a" {...{ href: "#contact" }}>
+            <Magnetic
+              as="a"
+              {...{ href: "#contact", onClick: (e: React.MouseEvent) => { e.preventDefault(); scrollToId("contact"); } }}
+            >
               <span className="inline-flex items-center gap-2 rounded-full bg-(--color-lime) px-6 py-3 text-sm font-medium text-(--color-void) transition-transform active:scale-95">
                 Contattami
               </span>
             </Magnetic>
             <a
               href="#about"
+              onClick={(e) => { e.preventDefault(); scrollToId("about"); }}
               data-cursor="hover"
               className="inline-flex items-center gap-2 text-sm text-(--color-ink-dim) transition-colors hover:text-(--color-ink)"
             >

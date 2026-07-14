@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
+export const lenisRef: { current: Lenis | null } = { current: null };
+
 export function useLenis() {
   useEffect(() => {
     const isTouch = matchMedia("(pointer: coarse)").matches;
@@ -12,6 +14,7 @@ export function useLenis() {
       smoothWheel: true,
       touchMultiplier: 1.5,
     });
+    lenisRef.current = lenis;
 
     let frame: number;
     function raf(time: number) {
@@ -23,6 +26,7 @@ export function useLenis() {
     return () => {
       cancelAnimationFrame(frame);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
 }

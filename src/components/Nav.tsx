@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { profile } from "../data/profile";
+import { scrollToId } from "../lib/scroll";
 
 const links = [
-  { href: "#about", label: "Profilo" },
-  { href: "#focus", label: "Focus" },
-  { href: "#contact", label: "Contatti" },
+  { id: "about", label: "Profilo" },
+  { id: "focus", label: "Focus" },
+  { id: "contact", label: "Contatti" },
 ];
 
 export function Nav() {
@@ -20,63 +21,81 @@ export function Nav() {
     return () => removeEventListener("scroll", onScroll);
   }, []);
 
+  function go(e: React.MouseEvent, id: string) {
+    e.preventDefault();
+    setOpen(false);
+    scrollToId(id);
+  }
+
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-(--color-void)/80 backdrop-blur-md border-b border-(--color-void-line)" : ""
-      }`}
-    >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 sm:px-10">
-        <a
-          href="#top"
-          className="flex items-center gap-2 font-display text-sm font-medium tracking-widest uppercase"
-        >
-          <span className="font-mono text-(--color-lime)">{"</>"}</span>
-          {profile.firstName}
-        </a>
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+          scrolled ? "bg-(--color-void)/80 backdrop-blur-md border-b border-(--color-void-line)" : ""
+        }`}
+      >
+        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 sm:px-10">
+          <a
+            href="#top"
+            onClick={(e) => go(e, "top")}
+            className="flex items-center gap-2 font-display text-sm font-medium tracking-widest uppercase"
+          >
+            <span className="font-mono text-(--color-lime)">{"</>"}</span>
+            {profile.firstName}
+          </a>
 
-        <ul className="hidden gap-8 text-sm text-(--color-ink-dim) sm:flex">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a href={l.href} className="transition-colors hover:text-(--color-ink)">
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+          <ul className="hidden gap-8 text-sm text-(--color-ink-dim) sm:flex">
+            {links.map((l) => (
+              <li key={l.id}>
+                <a
+                  href={`#${l.id}`}
+                  onClick={(e) => go(e, l.id)}
+                  className="transition-colors hover:text-(--color-ink)"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-        <a
-          href={`mailto:${profile.email}`}
-          className="hidden rounded-full border border-(--color-void-line) px-4 py-2 text-sm transition-colors hover:border-(--color-lime) hover:text-(--color-lime) sm:inline-block"
-        >
-          Scrivimi
-        </a>
+          <a
+            href={`mailto:${profile.email}`}
+            className="hidden rounded-full border border-(--color-void-line) px-4 py-2 text-sm transition-colors hover:border-(--color-lime) hover:text-(--color-lime) sm:inline-block"
+          >
+            Scrivimi
+          </a>
 
-        <button
-          aria-label="Apri menu"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="relative z-50 flex size-9 flex-col items-center justify-center gap-1.5 sm:hidden"
-        >
-          <span
-            className={`h-px w-5 bg-(--color-ink) transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
-          />
-          <span
-            className={`h-px w-5 bg-(--color-ink) transition-transform ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
-          />
-        </button>
-      </nav>
+          <span className="size-9 sm:hidden" aria-hidden="true" />
+        </nav>
+      </header>
+
+      {/* Il toggle vive fuori da <header> (che ha il suo stacking context a z-50):
+          annidarlo lì lo terrebbe sempre sotto l'overlay del menu, rendendolo intoccabile
+          per chiuderlo. Qui sta su un livello proprio, sempre sopra tutto. */}
+      <button
+        aria-label={open ? "Chiudi menu" : "Apri menu"}
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+        className="fixed right-6 top-5 z-[80] flex size-9 flex-col items-center justify-center gap-1.5 sm:hidden"
+      >
+        <span
+          className={`h-px w-5 bg-(--color-ink) transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
+        />
+        <span
+          className={`h-px w-5 bg-(--color-ink) transition-transform ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
+        />
+      </button>
 
       <div
-        className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-(--color-void) transition-opacity duration-300 sm:hidden ${
+        className={`fixed inset-0 z-[70] flex h-[100dvh] flex-col items-center justify-center gap-8 bg-(--color-void) transition-opacity duration-300 sm:hidden ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
         {links.map((l) => (
           <a
-            key={l.href}
-            href={l.href}
-            onClick={() => setOpen(false)}
+            key={l.id}
+            href={`#${l.id}`}
+            onClick={(e) => go(e, l.id)}
             className="font-display text-3xl"
           >
             {l.label}
@@ -90,6 +109,6 @@ export function Nav() {
           Scrivimi
         </a>
       </div>
-    </header>
+    </>
   );
 }

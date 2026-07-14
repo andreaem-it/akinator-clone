@@ -1,4 +1,5 @@
 import { profile } from "../data/profile";
+import { scrollToId } from "../lib/scroll";
 
 export function Footer() {
   return (
@@ -9,7 +10,14 @@ export function Footer() {
           build: stable
         </span>
       </span>
-      <a href="#top" className="transition-colors hover:text-(--color-ink)">
+      <a
+        href="#top"
+        onClick={(e) => {
+          e.preventDefault();
+          scrollToId("top");
+        }}
+        className="transition-colors hover:text-(--color-ink)"
+      >
         Torna su ↑
       </a>
     </footer>
