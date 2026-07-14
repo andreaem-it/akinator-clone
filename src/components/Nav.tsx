@@ -27,7 +27,11 @@ export function Nav() {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 sm:px-10">
-        <a href="#top" className="font-display text-sm font-medium tracking-widest uppercase">
+        <a
+          href="#top"
+          className="flex items-center gap-2 font-display text-sm font-medium tracking-widest uppercase"
+        >
+          <span className="font-mono text-(--color-lime)">{"</>"}</span>
           {profile.firstName}
         </a>
 

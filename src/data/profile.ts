@@ -4,9 +4,9 @@ export const profile = {
   role: "Software Engineer",
   tagline: "Costruisco app mobile e soluzioni AI, con una base solida di ingegneria del prodotto.",
   location: "Italia",
-  email: "andreyodj@gmail.com", // TODO: conferma indirizzo pubblico da mostrare
+  email: "info@andreaem.it",
   github: "https://github.com/andreaem-it",
-  linkedin: undefined as string | undefined, // TODO: aggiungi link LinkedIn se disponibile
+  linkedin: "https://it.linkedin.com/in/andrea-emili",
 };
 
 export const focusAreas = [

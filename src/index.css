@@ -4,6 +4,7 @@
 @theme {
   --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
 
   --color-ink: #f5f4f0;
   --color-ink-dim: #a9a9ae;

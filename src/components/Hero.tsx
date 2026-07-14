@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { profile } from "../data/profile";
 import { GradientField } from "./GradientField";
-import { OrbitGraphic } from "./OrbitGraphic";
+import { Terminal } from "./Terminal";
 import { Magnetic } from "./Magnetic";
 
 const line = {
@@ -86,12 +86,11 @@ export function Hero() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
-          className="hidden lg:block"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.9, ease: [0.16, 1, 0.3, 1] as const }}
         >
-          <OrbitGraphic />
+          <Terminal />
         </motion.div>
       </div>
     </section>

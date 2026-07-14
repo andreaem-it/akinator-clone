@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Reveal } from "./Reveal";
+import { Eyebrow } from "./Eyebrow";
 import { Magnetic } from "./Magnetic";
 import { GradientField } from "./GradientField";
 import { profile } from "../data/profile";
@@ -22,7 +23,7 @@ export function Contact() {
       <GradientField />
       <div className="mx-auto max-w-6xl px-6 py-28 text-center sm:px-10 sm:py-40">
         <Reveal>
-          <span className="text-sm text-(--color-lime)">Contatti</span>
+          <Eyebrow>contatti</Eyebrow>
         </Reveal>
 
         <Reveal delay={0.05}>
@@ -40,7 +41,7 @@ export function Contact() {
         <Reveal delay={0.15}>
           <div className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
             <Magnetic as="a" {...{ href: `mailto:${profile.email}` }}>
-              <span className="inline-flex items-center gap-2 rounded-full bg-(--color-lime) px-8 py-4 text-base font-medium text-(--color-void)">
+              <span className="inline-flex items-center gap-2 rounded-full bg-(--color-lime) px-8 py-4 font-mono text-base font-medium text-(--color-void)">
                 {profile.email}
               </span>
             </Magnetic>
