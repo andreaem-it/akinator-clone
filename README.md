@@ -1,42 +1,34 @@
-# Akinator Clone
+# andreaem.it
 
-Un clone di Akinator: pensi a un personaggio (reale o di fantasia) e l'app cerca di indovinarlo facendo domande sì/no.
+Sito personale — React + TypeScript + Vite + Tailwind CSS v4 + Framer Motion.
 
-## Come funziona
-
-- **Motore di indovinello** (`server/engine.js`): ogni personaggio ha un vettore di "risposte attese" (da -1 a 1) per ogni domanda. Dopo ogni risposta dell'utente viene ricalcolato il peso di ciascun personaggio in base a quanto la sua risposta attesa si avvicina alla risposta data, e la domanda successiva viene scelta come quella che meglio distingue i candidati con più peso (massima varianza pesata).
-- Quando un personaggio emerge chiaramente sugli altri (o si raggiunge il numero massimo di domande), l'app fa il suo tentativo. Se sbaglia, scarta quel personaggio e continua a provare fino a 3 volte.
-- Se non riesce a indovinare, ti chiede chi era e **impara** quel nuovo personaggio dalle risposte che hai dato, salvandolo in `server/data/characters.json` per le partite future.
-- Dati iniziali: 40 personaggi (reali e storici, cartoni animati, supereroi, videogiochi, anime e letteratura) e 29 domande (`server/data/`).
-
-## Come eseguirlo
+## Sviluppo
 
 ```bash
 npm install
-npm start
+npm run dev
 ```
 
-Apri `http://localhost:3000` nel browser.
+## Build
+
+```bash
+npm run build
+npm run preview
+```
 
 ## Struttura
 
 ```
-server/
-  index.js        # server Express e rotte API
-  engine.js        # algoritmo di indovinello
-  data/
-    questions.json
-    characters.json
+src/
+  data/profile.ts     # contenuti reali del profilo (nome, contatti, skills, ecc.)
+  components/         # sezioni e componenti UI
+  fonts.css           # font self-hosted (Space Grotesk, Inter)
 public/
-  index.html
-  style.css
-  app.js
+  fonts/              # file woff2 self-hosted
 ```
 
-## API
+I contenuti (nome, email, link, skill, aree di focus) si modificano da `src/data/profile.ts`.
 
-- `POST /api/start` — avvia una nuova partita.
-- `POST /api/answer` — invia una risposta (`yes`, `probably`, `dont_know`, `probably_not`, `no`).
-- `POST /api/guess-feedback` — conferma o respinge il tentativo (`{ correct: true|false }`).
-- `POST /api/teach` — insegna un nuovo personaggio quando l'app non lo indovina.
-- `GET /api/info` — numero di personaggi conosciuti.
+## Deploy
+
+Configurato per Vercel come sito statico (`vercel.json`): build con `npm run build`, output in `dist/`.
