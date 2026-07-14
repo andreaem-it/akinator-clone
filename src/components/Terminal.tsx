@@ -1,15 +1,19 @@
 import { useTypewriter } from "../hooks/useTypewriter";
+import { currentRole } from "../data/profile";
 
 const script = [
   { cmd: "whoami", out: "andrea emili" },
-  { cmd: "role --current", out: "software engineer" },
-  { cmd: "focus --list", out: "mobile · ai · product" },
+  {
+    cmd: "position --current",
+    out: `${currentRole.title.toLowerCase()} @ ${currentRole.company.toLowerCase()} · ${currentRole.location.toLowerCase()}`,
+  },
+  { cmd: "focus --list", out: "mobile · ai (rag & chatbot) · product" },
   { cmd: "status", out: "open a nuove idee" },
 ];
 
 export function Terminal() {
   const lines = script.flatMap((s) => [`$ ${s.cmd}`, s.out]);
-  const { output, done } = useTypewriter(lines, 26, 900);
+  const { output, done } = useTypewriter(lines, 24, 900);
 
   return (
     <div className="mx-auto w-full max-w-md overflow-hidden rounded-2xl border border-(--color-void-line) bg-(--color-void-soft) shadow-2xl shadow-black/40">
@@ -19,7 +23,7 @@ export function Terminal() {
         <span className="size-2.5 rounded-full bg-[#28c840]/70" />
         <span className="ml-2 font-mono text-xs text-(--color-ink-dim)">zsh — ~/andrea</span>
       </div>
-      <div className="min-h-[220px] p-5 font-mono text-sm leading-relaxed sm:text-[15px]">
+      <div className="min-h-[250px] p-5 font-mono text-sm leading-relaxed sm:text-[15px]">
         {script.map((_, i) => {
           const cmdLine = output[i * 2];
           const outLine = output[i * 2 + 1];

@@ -1,5 +1,6 @@
 import { Reveal } from "./Reveal";
 import { Eyebrow } from "./Eyebrow";
+import { TiltCard } from "./TiltCard";
 import { focusAreas } from "../data/profile";
 
 export function Focus() {
@@ -18,7 +19,10 @@ export function Focus() {
         <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-3xl bg-(--color-void-line) sm:grid-cols-3">
           {focusAreas.map((area, i) => (
             <Reveal key={area.index} delay={0.08 * i} y={20}>
-              <div className="group relative h-full bg-(--color-void-soft) p-8 transition-colors hover:bg-(--color-void) sm:p-10">
+              <TiltCard
+                maxTilt={5}
+                className="group h-full bg-(--color-void-soft) p-8 transition-colors hover:bg-(--color-void) sm:p-10"
+              >
                 <span className="font-mono text-sm text-(--color-ink-dim)">
                   [<span className="text-(--color-lime)">{area.index}</span>]
                 </span>
@@ -27,7 +31,7 @@ export function Focus() {
                   {area.description}
                 </p>
                 <div className="mt-8 h-px w-8 bg-(--color-lime) transition-all duration-500 group-hover:w-16" />
-              </div>
+              </TiltCard>
             </Reveal>
           ))}
         </div>

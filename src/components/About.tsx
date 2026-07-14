@@ -1,6 +1,7 @@
 import { Reveal } from "./Reveal";
 import { Eyebrow } from "./Eyebrow";
-import { skillGroups } from "../data/profile";
+import { TiltCard } from "./TiltCard";
+import { skillGroups, currentRole } from "../data/profile";
 
 export function About() {
   return (
@@ -23,6 +24,37 @@ export function About() {
           all'esperienza utente, passando per performance e automazione. Uso l'AI come strumento
           di lavoro quotidiano, non come slogan.
         </p>
+      </Reveal>
+
+      <Reveal delay={0.15} className="mt-10 max-w-xl">
+        <TiltCard className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-(--color-void-line) bg-(--color-void-soft) px-6 py-5">
+          <div>
+            <span className="font-mono text-xs uppercase tracking-widest text-(--color-ink-dim)">
+              Attualmente
+            </span>
+            <p className="mt-1 font-display text-lg font-medium">
+              {currentRole.title} <span className="text-(--color-ink-dim)">@</span>{" "}
+              <span className="gradient-text">{currentRole.company}</span>
+            </p>
+            <p className="mt-0.5 text-sm text-(--color-ink-dim)">{currentRole.location}</p>
+          </div>
+          <div className="flex flex-col items-start gap-1 font-mono text-sm">
+            <a
+              href={currentRole.companyUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="text-(--color-lime) transition-colors hover:text-(--color-ink)"
+            >
+              bncom.it ↗
+            </a>
+            <a
+              href={`mailto:${currentRole.companyEmail}`}
+              className="text-(--color-ink-dim) transition-colors hover:text-(--color-ink)"
+            >
+              {currentRole.companyEmail}
+            </a>
+          </div>
+        </TiltCard>
       </Reveal>
 
       <div className="mt-20 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">

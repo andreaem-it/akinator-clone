@@ -9,6 +9,14 @@ export const profile = {
   linkedin: "https://it.linkedin.com/in/andrea-emili",
 };
 
+export const currentRole = {
+  title: "Web Developer",
+  company: "BNCom",
+  companyUrl: "https://www.bncom.it/",
+  companyEmail: "info@bncom.it",
+  location: "Assisi (PG)",
+};
+
 export const focusAreas = [
   {
     index: "01",
@@ -20,7 +28,7 @@ export const focusAreas = [
     index: "02",
     title: "Soluzioni AI",
     description:
-      "Integrazione di modelli e automazioni AI nei processi di prodotto: dalla prototipazione al deploy.",
+      "Chatbot su misura e sistemi RAG (Retrieval-Augmented Generation) per interrogare dati reali, più automazioni AI nei processi di prodotto.",
   },
   {
     index: "03",
@@ -45,7 +53,11 @@ export const skillGroups = [
   },
   {
     title: "AI & Prodotto",
-    items: ["AI-assisted development", "Automazione dei processi", "UI/UX & performance", "SEO tecnica"],
+    items: ["AI-assisted development", "RAG & Chatbot", "Automazione dei processi", "UI/UX & performance", "SEO tecnica"],
+  },
+  {
+    title: "Sicurezza & Infrastruttura",
+    items: ["Defensive Security", "OWASP Top 10", "Networking", "Hardening & monitoring"],
   },
 ];
 

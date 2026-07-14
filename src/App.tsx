@@ -1,6 +1,8 @@
 import { useLenis } from "./hooks/useLenis";
 import { Noise } from "./components/Noise";
 import { Cursor } from "./components/Cursor";
+import { Spotlight } from "./components/Spotlight";
+import { ScrollProgress } from "./components/ScrollProgress";
 import { Nav } from "./components/Nav";
 import { Hero } from "./components/Hero";
 import { Marquee } from "./components/Marquee";
@@ -16,6 +18,8 @@ function App() {
   return (
     <>
       <Noise />
+      <Spotlight />
+      <ScrollProgress />
       <Cursor />
       <Nav />
       <main>
