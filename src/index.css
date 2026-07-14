@@ -50,6 +50,12 @@
     margin: 0;
   }
 
+  @media (pointer: fine) {
+    * {
+      cursor: none !important;
+    }
+  }
+
   a {
     color: inherit;
   }

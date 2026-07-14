@@ -1,6 +1,7 @@
 // Contenuti reali del profilo. Sostituisci i placeholder quando hai i dati definitivi.
 export const profile = {
   firstName: "Andrea",
+  fullName: "Andrea Emili",
   role: "Software Engineer",
   tagline: "Costruisco app mobile e soluzioni AI, con una base solida di ingegneria del prodotto.",
   location: "Italia",

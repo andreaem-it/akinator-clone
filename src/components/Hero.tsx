@@ -53,7 +53,7 @@ export function Hero() {
           <h1 className="font-display text-[13vw] font-medium leading-[0.92] sm:text-[8vw] lg:text-[5vw]">
             <KineticLine text={`Ciao, sono ${profile.firstName}.`} />
             <KineticLine text="Costruisco" className="gradient-text" />
-            <KineticLine text="app mobile & AI." />
+            <KineticLine text="app mobile & soluzioni AI." />
           </h1>
 
           <motion.p

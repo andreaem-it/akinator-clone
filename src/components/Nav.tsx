@@ -41,10 +41,10 @@ export function Nav() {
             className="flex items-center gap-2 font-display text-sm font-medium tracking-widest uppercase"
           >
             <span className="font-mono text-(--color-lime)">{"</>"}</span>
-            {profile.firstName}
+            {profile.fullName}
           </a>
 
-          <ul className="hidden gap-8 text-sm text-(--color-ink-dim) sm:flex">
+          <ul className="hidden gap-8 text-sm uppercase tracking-wide text-(--color-ink-dim) sm:flex">
             {links.map((l) => (
               <li key={l.id}>
                 <a
@@ -96,7 +96,7 @@ export function Nav() {
             key={l.id}
             href={`#${l.id}`}
             onClick={(e) => go(e, l.id)}
-            className="font-display text-3xl"
+            className="font-display text-3xl uppercase tracking-wide"
           >
             {l.label}
           </a>

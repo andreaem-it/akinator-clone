@@ -7,8 +7,8 @@ const script = [
     cmd: "position --current",
     out: `${currentRole.title.toLowerCase()} @ ${currentRole.company.toLowerCase()} · ${currentRole.location.toLowerCase()}`,
   },
-  { cmd: "focus --list", out: "mobile · ai (rag & chatbot) · product" },
-  { cmd: "status", out: "open a nuove idee" },
+  { cmd: "focus --list", out: "mobile - ai - security" },
+  { cmd: "status", out: "open to new ideas" },
 ];
 
 export function Terminal() {
